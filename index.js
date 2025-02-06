@@ -20,8 +20,12 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/hora', async (req, res) => {
-  const result = pool.query('SELECT NOW()')
-  res.json(result.rows)
+  try {
+    const result = pool.query('SELECT NOW()')
+    res.json(result.rows)
+  } catch (error) {
+    console.error(error)
+  }
 })
 
 app.listen(port, () => {
