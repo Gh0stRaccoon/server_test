@@ -21,7 +21,7 @@ app.get('/users', (req, res) => {
 
 app.get('/hora', async (req, res) => {
   try {
-    const result = pool.query('SELECT NOW()')
+    const result = await pool.query('SELECT NOW()')
     res.json(result.rows)
   } catch (error) {
     console.error(error)
