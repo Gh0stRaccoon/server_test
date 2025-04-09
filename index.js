@@ -1,5 +1,5 @@
 const express = require('express')
-const { default: pool } = require('./connection')
+const pool = require('./connection')
 const cors = require('cors')
 
 const app = express()
